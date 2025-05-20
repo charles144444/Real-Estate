@@ -37,8 +37,8 @@ const Hero = () => {
           </ul>
         </div>
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-black/90 md:hidden">
-            <ul className="flex flex-col space-y-2 py-4 px-6 text-white font-medium">
+          <div className="absolute top-full left-0 w-full bg-transparent md:hidden">
+            <ul className="flex flex-col space-y-2 py-4 px-6 text-white font-medium bg-black/50 rounded-b-lg">
               <li><a href="#" className="hover:underline" onClick={() => setMenuOpen(false)}>Home</a></li>
               <li>
                 <Link to="/properties" className="hover:underline" onClick={() => setMenuOpen(false)}>Listings</Link>

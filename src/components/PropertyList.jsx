@@ -166,6 +166,42 @@ const properties = [
     sqft: 2800,
     image: 'bg-[url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHVwbGV4fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60")]',
   },
+
+   {
+      id: 16,
+      title: "Ocean Breeze Villa",
+      price: 910000,
+      location: "Malibu, CA",
+      type: "Villa",
+      beds: 4,
+      baths: 3,
+      sqft: 3200,
+      image: "bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')]"
+    },
+
+    {
+      id: 17,
+      title: "Jakson House",
+      price: 750000,
+      location: "Austin, TX",
+      type: "House",
+      beds: 3,
+      baths: 2,
+      sqft: 2400,
+      image: "bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')]"
+    },
+     
+    {
+      id: 18,
+      title: "Lakeside Cottage",
+      price: 540000,
+      location: "Lake Tahoe, CA",
+      type: "Cottage",
+      beds: 2,
+      baths: 1,
+      sqft: 1800,
+      image: "bg-[url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')]"
+    }
 ];
 
 const badgeColors = {

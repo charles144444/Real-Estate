@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import PropertyCard from './PropertyCard';
+import { Link } from 'react-router-dom'; // Add this import
 
 const FeaturedProperties = ({ favorites, toggleFavorite }) => {
   const featuredProperties = [
     {
-      id: 1,
+      id: '1',
       title: "Ocean Breeze Villa",
       price: 910000,
       location: "Malibu, CA",
@@ -15,7 +16,7 @@ const FeaturedProperties = ({ favorites, toggleFavorite }) => {
       image: "bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')]"
     },
     {
-      id: 2,
+      id: '2',
       title: "Jakson House",
       price: 750000,
       location: "Austin, TX",
@@ -26,7 +27,7 @@ const FeaturedProperties = ({ favorites, toggleFavorite }) => {
       image: "bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')]"
     },
     {
-      id: 3,
+      id: '3',
       title: "Lakeside Cottage",
       price: 540000,
       location: "Lake Tahoe, CA",
