@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import SearchForm from './components/SearchForm';
 import FeaturedProperties from './components/FeaturedProperties';
@@ -8,6 +8,11 @@ import PropertyDetails from './components/PropertyDetails';
 import PropertyList from './components/PropertyList';
 import About from './components/About'; 
 import Blog from "./components/Blog";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import AddProperty from "./components/AddProperty";
+import EditProperty from "./components/EditProperty";
+import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
   return (
@@ -22,16 +27,19 @@ function App() {
                   <Hero />
                   <SearchForm />
                   <FeaturedProperties />
-                  {/* Removed the extra Browse All Properties button here */}
                   <CTA />
                   <Blog />
-
                 </>
               }
             />
             <Route path="/properties" element={<PropertyList />} />
             <Route path="/properties/:id" element={<PropertyDetails />} />
-            <Route path="/about" element={<About />} /> {/* <-- Add this route */}
+            <Route path="/about" element={<About />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/add-property" element={<AddProperty />} />
+            <Route path="/edit-property/:id" element={<EditProperty />} />
+                        <Route path="/admin" element={<AdminDashboard />} /> {/* Fixed path */}
           </Routes>
         </main>
         <Footer />

@@ -53,15 +53,7 @@ const PropertyCard = ({ property, favorites, toggleFavorite }) => {
             <div>Sq. Ft.</div>
           </div>
         </div>
-        <motion.button 
-          className="w-full flex items-center justify-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-600 font-medium py-2 px-4 rounded-lg transition-all duration-200 group-hover:bg-blue-600 group-hover:text-white"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          onClick={() => navigate(`/properties/${property.id}`)} // <-- Add this line
-        >
-          View Details <ArrowRightIcon className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </motion.button>
-      </div>
+              </div>
     </motion.div>
   );
 };
