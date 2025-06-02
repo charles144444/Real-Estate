@@ -15,7 +15,7 @@ const SignIn = () => {
       const parsedUser = JSON.parse(savedUser);
       console.log('Loaded user from localStorage:', parsedUser);
       setUser(parsedUser);
-      navigate('/properties'); // Redirect if already signed in
+      navigate('/'); // Redirect if already signed in
     }
   }, [navigate]);
 
@@ -37,7 +37,7 @@ const SignIn = () => {
         setUser(data.user);
         localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('token', data.token);
-        navigate('/properties');
+        navigate('/');
       }
     } catch (err) {
       setError('Network error');
