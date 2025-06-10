@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import SearchForm from './components/SearchForm';
 import FeaturedProperties from './components/FeaturedProperties';
@@ -16,35 +16,33 @@ import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-gray-50 flex flex-col">
-        <main className="flex-grow">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <SearchForm />
-                  <FeaturedProperties />
-                  <CTA />
-                  <Blog />
-                </>
-              }
-            />
-            <Route path="/properties" element={<PropertyList />} />
-            <Route path="/properties/:id" element={<PropertyDetails />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/add-property" element={<AddProperty />} />
-            <Route path="/edit-property/:id" element={<EditProperty />} />
-                        <Route path="/admin" element={<AdminDashboard />} /> {/* Fixed path */}
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <main className="flex-grow">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <SearchForm />
+                <FeaturedProperties />
+                <CTA />
+                <Blog />
+              </>
+            }
+          />
+          <Route path="/properties" element={<PropertyList />} />
+          <Route path="/properties/:id" element={<PropertyDetails />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/add-property" element={<AddProperty />} />
+          <Route path="/edit-property/:id" element={<EditProperty />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

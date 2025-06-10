@@ -277,6 +277,35 @@ const AdminDashboard = () => {
                       <td className="py-3 px-4">
                         {new Date(property.created_at).toLocaleDateString()}
                       </td>
+                      <td className="py-3 px-4">
+                        <button
+                          className="px-3 py-1 rounded text-sm bg-red-500 text-white hover:bg-red-600"
+                          onClick={async () => {
+                            if (!window.confirm('Are you sure you want to delete this property?')) return;
+                            try {
+                              const token = localStorage.getItem('token');
+                              const res = await fetch(`http://${backendUrl}/api/properties/${property.id}`, {
+                                method: 'DELETE',
+                                headers: {
+                                  'Authorization': `Bearer ${token}`,
+                                  'Content-Type': 'application/json',
+                                },
+                              });
+                              const data = await res.json();
+                              if (!res.ok) {
+                                alert(data.error || 'Failed to delete property');
+                              } else {
+                                setProperties(properties.filter(p => p.id !== property.id));
+                                alert('Property deleted successfully!');
+                              }
+                            } catch (err) {
+                              alert('Network error');
+                            }
+                          }}
+                        >
+                          Delete
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
