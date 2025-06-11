@@ -12,7 +12,8 @@ const SignUp = () => {
     setError('');
     setSuccess(false);
     try {
-      const res = await fetch('/api/signup', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const res = await fetch(`https://${backendUrl}/api/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password }),
