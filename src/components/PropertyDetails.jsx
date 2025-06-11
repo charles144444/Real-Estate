@@ -10,7 +10,8 @@ const PropertyDetails = () => {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/properties/${id}`);
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const res = await fetch(`https://${backendUrl}/api/properties/${id}`);
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Failed to fetch property');
         setProperty(data);

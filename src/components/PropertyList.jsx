@@ -24,7 +24,8 @@ const PropertyList = () => {
         return;
       }
       try {
-        const res = await fetch('http://localhost:3000/api/users/1', {
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const res = await fetch(`https://${backendUrl}/api/users/1`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -42,7 +43,8 @@ const PropertyList = () => {
 
     const fetchProperties = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/properties');
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const res = await fetch(`https://${backendUrl}/api/properties`);
         if (!res.ok) {
           const errorData = await res.json();
           throw new Error(errorData.error || 'Failed to fetch properties');
@@ -71,7 +73,8 @@ const PropertyList = () => {
         setError('Authentication required');
         return;
       }
-      const res = await fetch(`http://localhost:3000/api/properties/${id}`, {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const res = await fetch(`https://${backendUrl}/api/properties/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

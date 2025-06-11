@@ -25,7 +25,8 @@ const EditProperty = () => {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/properties/${id}`);
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const res = await fetch(`https://${backendUrl}/api/properties/${id}`);
         const data = await res.json();
         if (res.ok) {
           setFormData({
@@ -140,7 +141,8 @@ const EditProperty = () => {
     console.log('Submitting edited data to backend:', payload);
 
     try {
-      const res = await fetch(`http://localhost:3000/api/properties/${id}`, {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const res = await fetch(`https://${backendUrl}/api/properties/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -24,7 +24,8 @@ const SignIn = () => {
     setError('');
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/api/signin', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const res = await fetch(`https://${backendUrl}/api/signin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

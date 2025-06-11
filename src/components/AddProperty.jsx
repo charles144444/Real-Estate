@@ -183,7 +183,8 @@ const AddProperty = () => {
         throw new Error('Authentication token missing. Please sign in again.');
       }
 
-      const res = await fetch('http://localhost:3000/api/properties', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const res = await fetch(`https://${backendUrl}/api/properties`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

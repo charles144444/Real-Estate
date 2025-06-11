@@ -33,7 +33,8 @@ const AdminDashboard = () => {
       }
 
       // Fetch users
-      const usersRes = await fetch('http://localhost:3000/api/admin/users', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const usersRes = await fetch(`https://${backendUrl}/api/admin/users`, {
         headers: { 
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -49,7 +50,7 @@ const AdminDashboard = () => {
       setUsers(usersData);
 
       // Fetch properties
-      const propertiesRes = await fetch('http://localhost:3000/api/admin/properties', {
+      const propertiesRes = await fetch(`https://${backendUrl}/api/admin/properties`, {
         headers: { 
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -91,7 +92,7 @@ const AdminDashboard = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:3000/api/admin/users/${userId}`, {
+      const res = await fetch(`https://${backendUrl}/api/admin/users/${userId}`, {
         method: 'DELETE',
         headers: { 
           'Authorization': `Bearer ${token}`,
@@ -284,7 +285,7 @@ const AdminDashboard = () => {
                             if (!window.confirm('Are you sure you want to delete this property?')) return;
                             try {
                               const token = localStorage.getItem('token');
-                              const res = await fetch(`http://${backendUrl}/api/properties/${property.id}`, {
+                              const res = await fetch(`https://${backendUrl}/api/properties/${property.id}`, {
                                 method: 'DELETE',
                                 headers: {
                                   'Authorization': `Bearer ${token}`,
